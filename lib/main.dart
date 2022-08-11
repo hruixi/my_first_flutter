@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+import 'mainTest.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -93,6 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
     print("reassemble");
   }
 
+  static final GlobalKey<ScaffoldState> _globalKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     print("build");
@@ -134,6 +138,18 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            TextButton(
+              child: Text("open new route"),
+              onPressed: () {
+                // 导航到新路由
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return const TestApp();
+                  }),
+                );
+              },
             ),
           ],
         ),
