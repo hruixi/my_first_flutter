@@ -1,10 +1,7 @@
 import 'dart:developer';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:my_first_flutter/routeTest/routeTest.dart';
-
-import 'mainTest.dart';
+import 'package:my_first_flutter/stateTest/mainTest.dart';
 
 void main() {
   runApp(const MyApp());
