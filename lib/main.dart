@@ -1,6 +1,8 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_flutter/routeTest/routeTest.dart';
 
 import 'mainTest.dart';
 
@@ -140,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             TextButton(
-              child: Text("open new route"),
+              child: const Text("打开新页面"),
               onPressed: () {
                 // 导航到新路由
                 Navigator.push(

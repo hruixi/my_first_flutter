@@ -146,7 +146,7 @@ class _ParentWidgetCState extends State<ParentWidgetC> {
 
 //-----------  TapboxC -----------
 class TapboxC extends StatefulWidget {
-  TapboxC({Key? key, this.active: false, required this.onChanged})
+  const TapboxC({Key? key, this.active = false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -205,9 +205,20 @@ class _TapboxCState extends State<TapboxC> {
                   : null,
             ),
             child: Center(
-              child: Text(
-                widget.active ? 'Active' : 'Inactive',
-                style: const TextStyle(fontSize: 32.0, color: Colors.white),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:<Widget> [
+                    Text(
+                      widget.active ? 'Active' : 'Inactive',
+                      style: const TextStyle(fontSize: 32.0, color: Colors.white),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: const Text(
+                        "返回上一页",
+                        style: TextStyle(color: Colors.lime, fontSize: 23)),
+                    )
+                  ]
               ),
             ),
           ),
