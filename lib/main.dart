@@ -1,6 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:my_first_flutter/packageManager/packageManager.dart';
+import 'package:my_first_flutter/routeTest/main_route_test.dart';
+import 'package:my_first_flutter/routeTest/routeTest.dart';
 import 'package:my_first_flutter/stateTest/mainTest.dart';
 
 void main() {
@@ -15,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: "/", //名为"/"的路由作为应用的home(首页)
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -27,6 +31,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      routes: {
+        // "/": (context) => MyHomePage(title: ModalRoute.of(context)!.settings.arguments as String),
+        "Tip_Route": (context) => const TipRoute(),
+        "Parent_WidgetC": (context) => const ParentWidgetC(),
+        "Router_Test_Route": (context) => const RouterTestRoute(),
+        "Random_Words_Widget": (context) => const RandomWordsWidget(),
+      },
       home: const MyHomePage(title: 'Flutter Demo之无尽的计数器🐂🍺'),
     );
   }
@@ -142,12 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("打开新页面"),
               onPressed: () {
                 // 导航到新路由
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return const TestApp();
-                  }),
-                );
+                Navigator.of(context).pushNamed("Random_Words_Widget");
               },
             ),
           ],
