@@ -5,6 +5,10 @@ import 'package:my_first_flutter/packageManager/packageManager.dart';
 import 'package:my_first_flutter/routeTest/main_route_test.dart';
 import 'package:my_first_flutter/routeTest/routeTest.dart';
 import 'package:my_first_flutter/stateTest/mainTest.dart';
+import 'package:my_first_flutter/textDemo/text.dart';
+
+import 'addOrDeleteChildWidget/addChildDemo.dart';
+import 'imageAndIcon/loadImage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,8 +41,11 @@ class MyApp extends StatelessWidget {
         "Parent_WidgetC": (context) => const ParentWidgetC(),
         "Router_Test_Route": (context) => const RouterTestRoute(),
         "Random_Words_Widget": (context) => const RandomWordsWidget(),
+        "Text_Widget": (context) => const TextWidget(),
+        "Load_Image": (context) => const LoadImage(),
+        "Add_Child_Widget": (context) => const AddChildWidget(),
       },
-      home: const MyHomePage(title: 'Flutter Demo之无尽的计数器🐂🍺'),
+      home: const MyHomePage(title: '青铜门🚪'),
     );
   }
 }
@@ -142,18 +149,30 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              '你按了这么多次按钮:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            // const Text(
+            //   '你按了这么多次按钮:',
+            // ),
+            // Text(
+            //   '$_counter',
+            //   style: Theme.of(context).textTheme.headline4,
+            // ),
             TextButton(
-              child: const Text("打开新页面"),
+              child: const Text("文本demo"),
               onPressed: () {
                 // 导航到新路由
-                Navigator.of(context).pushNamed("Random_Words_Widget");
+                Navigator.of(context).pushNamed("Text_Widget");
+              },
+            ),
+            TextButton(
+              child: const Text("图片demo"),
+              onPressed: () {
+                Navigator.of(context).pushNamed("Load_Image");
+              },
+            ),
+            TextButton(
+              child: const Text("添加子组件demo"),
+              onPressed: () {
+                Navigator.of(context).pushNamed("Add_Child_Widget");
               },
             ),
           ],
