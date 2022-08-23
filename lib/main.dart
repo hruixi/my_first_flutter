@@ -9,6 +9,7 @@ import 'package:my_first_flutter/textDemo/text.dart';
 
 import 'addOrDeleteChildWidget/addChildDemo.dart';
 import 'imageAndIcon/loadImage.dart';
+import 'nativeChannel/platformChannel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         "Text_Widget": (context) => const TextWidget(),
         "Load_Image": (context) => const LoadImage(),
         "Add_Child_Widget": (context) => const AddChildWidget(),
+        "Platform_Channel": (context) => const PlatformChannel(),
       },
       home: const MyHomePage(title: '青铜门🚪'),
     );
@@ -173,6 +175,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("添加子组件demo"),
               onPressed: () {
                 Navigator.of(context).pushNamed("Add_Child_Widget");
+              },
+            ),
+            TextButton(
+              child: const Text("调用原生的电池电量demo"),
+              onPressed: () {
+                Navigator.of(context).pushNamed("Platform_Channel");
               },
             ),
           ],
