@@ -37,7 +37,8 @@ class MainActivity(): FlutterActivity() {
     }
 
     private fun getBatteryLevel(): Int {
-        val batteryLevel: Int = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        val batteryLevel: Int =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val batteryManager = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
             batteryManager.getIntProperty(BATTERY_PROPERTY_CAPACITY)
         } else {

@@ -61,7 +61,8 @@ captures/
 .dart_tool
 .idea
 .packages
-
+.flutter-plugins
+.flutter-plugins-dependencies
 # Google Services (e.g. APIs or Firebase)
 # google-services.json
 
