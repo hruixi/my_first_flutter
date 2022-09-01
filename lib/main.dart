@@ -8,6 +8,7 @@ import 'package:my_first_flutter/stateTest/mainTest.dart';
 import 'package:my_first_flutter/textDemo/text.dart';
 
 import 'addOrDeleteChildWidget/addChildDemo.dart';
+import 'functionalWidget/willPopScopeDemo.dart';
 import 'imageAndIcon/loadImage.dart';
 import 'nativeChannel/platformChannel.dart';
 
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         "Load_Image": (context) => const LoadImage(),
         "Add_Child_Widget": (context) => const AddChildWidget(),
         "Platform_Channel": (context) => const PlatformChannel(),
+        "Will_Pop_Scope_Demo": (context) => const WillPopScopeDemo(),
       },
       home: const MyHomePage(title: '青铜门🚪'),
     );
@@ -181,6 +183,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("调用原生的电池电量demo"),
               onPressed: () {
                 Navigator.of(context).pushNamed("Platform_Channel");
+              },
+            ),
+            TextButton(
+              child: const Text("返回拦截demo"),
+              onPressed: () {
+                Navigator.of(context).pushNamed("Will_Pop_Scope_Demo");
               },
             ),
           ],
